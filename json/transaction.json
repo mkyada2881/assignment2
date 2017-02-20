@@ -1,0 +1,9 @@
+{
+	"transaction":[
+		{"id":"1", "type":"Credit", "location":"Kitchener", "date":"12/01/2017","amount":"$50","outstanding":"$100+$50","toacc":"4379822221"},
+		{"id":"2", "type":"Debit", "location":"Toronto", "date":"13/01/2017","amount":"$20","outstanding":"$200-$20","toacc":"9812662311"},
+		{"id":"3", "type":"Credit", "location":"Toronto", "date":"14/02/2017","amount":"$40","outstanding":"$100+$40","toacc":"4387900901"},
+		{"id":"4", "type":"Credit", "location":"Kitchener", "date":"15/02/2017","amount":"$70","outstanding":"$400+$70","toacc":"8375534343"},
+		{"id":"5", "type":"Debit", "location":"London", "date":"16/02/2017","amount":"$50","outstanding":"$100-$50","toacc":"5561238783"}
+	]
+}
