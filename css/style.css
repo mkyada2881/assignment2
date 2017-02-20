@@ -13,3 +13,23 @@
     padding-top: 70px;
     padding-bottom: 70px;
 }
+img.devUser {
+  border: 0 none;
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.sidebar{
+  background-color: #333;
+  color:#000;
+
+}
+.cuSize{
+ 
+  border: 1px solid;
+}
+.bg-4 { 
+      background-color: #2f2f2f; 
+      color: #fff;
+  }
