@@ -1,0 +1,126 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Transaction Category</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost/side/css/simple-sidebar.css"> -->
+	
+	<script type="text/javascript" src="../js/custom.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      	</button>
+		     	<a class="navbar-brand" href="#">Conestoga</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      	<ul class="nav navbar-nav">
+		        	<li class="active"><a href="dashboard.html">Home</a></li>
+		        	<li class="dropdown">
+		          		<a href="#" title="Message"><i class="glyphicon glyphicon-inbox"></i></a>
+		          
+		        	</li>
+		        	<li><a href="#" title="Notification"><i class="glyphicon glyphicon-bell"></i><span class="badge ">7</span></a></li>
+		        	<li><a href="category.html">Category</a></li>
+		      	</ul>
+		      	<ul class="nav navbar-nav navbar-right">
+		      		<!-- <li><a href="javascript:void(0)">Welcome</a></li> -->
+		      		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Welcome user<span class="glyphicon glyphicon-user"></span> </a>
+		      			<ul class="dropdown-menu">
+		      				<li><a href="../index.html"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+		      			</ul>
+		      		</li>
+		        	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="img-responsive " src="../images/lang/ca.svg" height="50px" width="50px"></a>
+		        		<ul class="dropdown-menu">
+		      				<li><a href="#"><img class="img-responsive " src="../images/lang/sp.svg" height="40px" width="50px">Spanish</a></li>
+		      			</ul>
+		        	</li>
+		        	<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+		      	</ul>
+		    </div>
+	  	</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center">Transaction Category</h1>
+
+			<!-- tabs for transaction categories -->
+			<ul class="nav nav-tabs">
+			  <li class="active"><a data-toggle="tab" href="#home">List Categories</a></li>
+			  <li><a data-toggle="tab" href="#menu1">Add Category</a></li>
+			  
+			</ul>
+
+			<div class="tab-content">
+
+			  <div id="home" class="tab-pane fade in active">
+			    <h3 class="text-center">Categories</h3>
+			    
+			    <div class="table-responsive">          
+				  <table class="table table-striped">
+				    <thead>
+				      <tr class="info">
+				        <th>#</th>
+				        <th>Category Type</th>
+				        <th>Edit</th>
+				        <th>Delete&nbsp;<input type="checkbox" name="delCategoryAll" class="delCategoryAll"></th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				        <td>1</td>
+				        <td>Credit</td>
+				        <td><a href="javascript:void(0)"><i class="glyphicon glyphicon-edit"></i></a></td>
+				        <td><input type="checkbox" name="delCategory" class="delCategory"></td>
+				        
+				      </tr>
+				    </tbody>
+				  </table>
+				  </div>
+
+			  </div>
+
+
+			  <div id="menu1" class="tab-pane fade">
+			    <h3 class="text-center">Add New Category</h3>
+			    
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" for="email">Category Name:</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="catgoryName">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" for="pwd">Card type:</label>
+				    <div class="col-sm-10"> 
+				      <input type="text" class="form-control" id="cardType" placeholder="Ex. visa, master">
+				    </div>
+				  </div>
+				 
+				  <div class="form-group"> 
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-success">Add</button>
+				    </div>
+				  </div>
+				</form>
+			  </div>
+			  
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
