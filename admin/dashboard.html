@@ -1,0 +1,178 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Dashboard</title>
+		<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost/side/css/simple-sidebar.css"> -->
+	
+	<script type="text/javascript" src="../js/custom.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+</head>
+<body onload="loadData()">
+<!-- <h1>Welcome to goa singham</h1> -->
+	<nav class="navbar navbar-inverse">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      	</button>
+		     	<a class="navbar-brand" href="#">Conestoga</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      	<ul class="nav navbar-nav">
+		        	<li class="active"><a href="javascript:void(0)">Home</a></li>
+		        	<li class="dropdown">
+		          		<a href="#" title="Message"><i class="glyphicon glyphicon-inbox"></i></a>
+		          
+		        	</li>
+		        	<li><a href="#" title="Notification"><i class="glyphicon glyphicon-bell"></i><span class="badge">7</span></a></li>
+		        	<li><a href="category.html">Category</a></li>
+		      	</ul>
+		      	<ul class="nav navbar-nav navbar-right">
+		      		<!-- <li><a href="javascript:void(0)">Welcome</a></li> -->
+		      		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Welcome user<span class="glyphicon glyphicon-user"></span> </a>
+		      			<ul class="dropdown-menu">
+		      				<li><a href="../index.html"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+		      			</ul>
+		      		</li>
+		        	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="img-responsive " src="../images/lang/ca.svg" height="50px" width="50px"></a>
+		        		<ul class="dropdown-menu">
+		      				<li><a href="#"><img class="img-responsive " src="../images/lang/sp.svg" height="40px" width="50px">Spanish</a></li>
+		      			</ul>
+		        	</li>
+		        	<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+		      	</ul>
+		    </div>
+	  	</div>
+	</nav>
+	
+	<div class="container">
+		<h1 class="text-center">Dashboard</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<span>Filter by:</span>
+			</div>
+			<div class="col-md-2">
+				<span> Date </span>
+			</div>
+			<div class="col-md-2">
+				<span> Transaction Type </span>
+				<select class="form-control" id="transType" onchange="filterByType('transType','type')">
+					<option value="">Select Type</option>
+					<option value="debit">Debit</option>
+					<option value="credit">Credit</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<span> Location </span>
+				<select class="form-control" id="branchLocation" onchange="filterByLocation('branchLocation','location')">
+					<option value="">Select Location</option>
+					<option value="kitchener">Kitchener</option>
+					<option value="toronto">Toronto</option>
+					<option value="london">London</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="table-responsive">          
+			  <table class="table">
+			  	
+			    <thead class="tableHead">
+			      <tr>
+			        <th>#</th>
+			        <th>Date</th>
+			        <th>Transaction Type</th>
+			        <th>Location</th>
+			        <th>Amount</th>
+			        <th>Outstanding</th>
+			        <th>To Account</th>
+			      </tr>
+			    </thead>
+			    <tbody class="transactData" id="transactData">
+			      <!-- <tr>
+			        <td><a data-date="12/01/2017" data-trans="Credit" data-location="Kitchener" href="javascript:void(0)" onclick="showData(this)" data-toggle="modal" data-target="#myModal">1</a></td>
+			        <td>12/01/2017</td>
+			        <td>Credit</td>
+			        <td>Kitchener</td>
+			      </tr>
+			      <tr>
+			        <td><a data-date="13/02/2017" data-trans="Debit" data-location="Toronto" href="javascript:void(0)" onclick="showData(this)" data-toggle="modal" data-target="#myModal">2</a></td>
+			        <td>13/02/2017</td>
+			        <td>Debit</td>
+			        <td>Toronto</td>
+			      </tr>
+			      <tr>
+			        <td><a data-date="14/02/2017" data-trans="Credit" data-location="Toronto" href="javascript:void(0)" onclick="showData(this)" data-toggle="modal" data-target="#myModal">3</a></td>
+			        <td>14/02/2017</td>
+			        <td>Credit</td>
+			        <td>Toronto</td>
+			      </tr>
+
+			      <tr>
+			        <td><a data-date="12/02/2017" data-trans="Debit" data-location="Kitchener" href="javascript:void(0)" onclick="showData(this)" data-toggle="modal" data-target="#myModal">4</a></td>
+			        <td>12/02/2017</td>
+			        <td>Debit</td>
+			        <td>Kitchener</td>
+			      </tr>
+			      <tr>
+			        <td><a data-date="12/02/2017" data-trans="Credit" data-location="London" href="javascript:void(0)" onclick="showData(this)" data-toggle="modal" data-target="#myModal">5</a></td>
+			        <td>12/02/2017</td>
+			        <td>Credit</td>
+			        <td>London</td>
+			      </tr> -->
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+
+	<!--- Pop up model for description -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Transaction Information</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>
+	        	<strong>Date:</strong>&nbsp;<span id="tra-date"></span>
+	        </p>
+	        <p>
+	        	<strong>Type:</strong>&nbsp;<span id="tra-type"></span>
+	        </p>
+	        <p>
+	        	<strong>Location:</strong>&nbsp;<span id="tra-location"></span>
+	        </p>
+	        <p>
+	        	<strong>Amount:</strong>&nbsp;<span id="tra-amount"></span>
+	        </p>
+	        <p>
+	        	<strong>Outstanding:</strong>&nbsp;<span id="tra-total"></span>
+	        </p>
+	        <p>
+	        	<strong>To Account:</strong>&nbsp;<span id="tra-acc"></span>
+	        </p>
+	        <p>
+	        	<strong>Description:</strong>&nbsp;<span id="tra-desc"></span>
+	        </p>
+	        
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+</body>
+</html>
