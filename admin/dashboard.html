@@ -56,6 +56,46 @@
 	<div class="container">
 		<h1 class="text-center">Dashboard</h1>
 		<div class="row">
+			<div class="col-md-2">
+				<input type="submit" name="addTrans" class="btn btn-info"  data-toggle="modal" data-target="#transModal" value="Add New Transaction">
+			</div>
+		</div>
+		<div id="transModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Add New Transaction</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form onsubmit="return(transactionPattern());">
+		        	<div class="form-group">
+					    <label for="email">Amount</label><br>
+					    <small>Must be in decimal format. example : 100.00</small>
+					    <br>
+					    <small>No need to add "$"</small>
+					    <input type="text" class="form-control amount" id="amount" placeholder="">
+					</div>
+					<div class="form-group">
+					    <label for="pwd">Description</label>
+					    <input type="text" class="form-control desc" id="desc">
+					</div>
+					<!-- <div class="checkbox">
+					    <label><input type="checkbox"> Remember me</label>
+					</div> -->
+					<button type="submit" class="btn btn-success">Add Transaction</button>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+		<div class="row">
 			<div class="col-md-6">
 				<span>Filter by:</span>
 			</div>

@@ -226,3 +226,17 @@ function formError(){
 	return( true );
 
 }
+
+function transactionPattern(){
+	
+	var description = /^[_A-Za-z0-9 -]{10,}$/g;
+	
+	var desc = document.getElementById("desc").value;
+	
+	if(!description.test(desc)){
+		alert("Description should be minimum of 10 characters");
+		return false;
+	}
+
+	return( true );
+}
