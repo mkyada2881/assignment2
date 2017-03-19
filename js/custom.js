@@ -149,3 +149,60 @@ function loadData(){
 	xml.open("GET", "../json/transaction.json", true);
 	xml.send();
 }
+
+function loginCheck(){
+	// var emailPattern = 
+	var pattern = /^[_A-Za-z0-9 -]{5,10}$/g;
+	var passPattern = /^.{4,}$/g;
+
+	var emailAdd = getelement("username").value;
+	var pass = getelement("pwd").value;
+	if(!pattern.test(emailAdd)){
+		alert("Enter valid username");
+		return false;
+	}
+
+	if(!passPattern.test(pass)){
+		alert("Password must be minimum of 4 characters");
+		return false;
+	}
+
+	return( true );
+}
+
+/**
+ * Below function will check the form error
+ */
+function formError(){
+	var pattern = /^[_A-Za-z0-9 -]{5,10}$/g;
+	var emailPattern = /^([\w]+(?:\.[\w]+)*){1}@(([\w]*))(((?:\.)[\w{2}]*[^\.]){1,2})/g;
+	var password = /^.{4,}$/g;
+
+
+	/**
+	 * Field values
+	 */
+	var pass = getelement("pwd").value;
+	var emilaID = getelement("email").value;
+	var userName = getelement("username").value;
+	
+	if(!emailPattern.test(emilaID)){
+		
+		alert("Please provide correct email address");
+	
+		return false;
+	}
+
+	if(!pattern.test(userName)){
+		
+		alert("Username not correct.\nPlease Enter valid Username");
+		return false;
+	}
+
+	if(!password.test(pass)){
+		alert("Password must be 4 characters long");
+		return false;
+	}
+	
+	return( true );
+}
