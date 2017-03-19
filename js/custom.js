@@ -231,10 +231,23 @@ function transactionPattern(){
 	
 	var description = /^[_A-Za-z0-9 -]{10,}$/g;
 	
-	var desc = document.getElementById("desc").value;
-	
+	var amount = /^[0-9]*(?:\.([0-9]{2}))$/g;
+
+	var desc = getelement("desc").value;
+
+	var money = getelement("amount").value;
+
 	if(!description.test(desc)){
 		alert("Description should be minimum of 10 characters");
+		return false;
+	}
+
+	if(parseFloat(money)<(-10000.00) || parseFloat(money)>10000.00){
+		alert("amount should be between -10000 to 10000");
+		return false;
+	}
+	if(!amount.test(money)){
+		alert("In decimal format please.\nExample 1000.00");
 		return false;
 	}
 
