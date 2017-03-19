@@ -170,6 +170,7 @@ function loginCheck(){
 	return( true );
 }
 
+
 /**
  * Below function will check the form error
  */
@@ -206,3 +207,4 @@ function formError(){
 	
 	return( true );
 }
+
