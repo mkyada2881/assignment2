@@ -177,7 +177,11 @@ function formError(){
 	var pattern = /^[_A-Za-z0-9 -]{5,10}$/g;
 	var emailPattern = /^([\w]+(?:\.[\w]+)*){1}@(([\w]*))(((?:\.)[\w{2}]*[^\.]){1,2})/g;
 	var password = /^.{4,}$/g;
+
 	var NamePattern = /^[A-Z][A-Za-z0-9 ]+$/g;
+
+
+
 
 	/**
 	 * Field values
@@ -185,6 +189,7 @@ function formError(){
 	var pass = getelement("pwd").value;
 	var emilaID = getelement("email").value;
 	var userName = getelement("username").value;
+
 	var fname = getelement("fname").value;
 	var lname = getelement("lname").value;
 	
@@ -201,6 +206,7 @@ function formError(){
 		return false;
 	}
 
+
 	if(!NamePattern.test(fname)){
 		alert("First letter should be capital");
 		return false;
@@ -211,10 +217,12 @@ function formError(){
 		return false;
 	}
 
+
 	if(!password.test(pass)){
 		alert("Password must be 4 characters long");
 		return false;
 	}
 	
 	return( true );
+
 }
